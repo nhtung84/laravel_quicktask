@@ -11,7 +11,7 @@
                     {!! Form::open(['method' => 'POST', 'routes' => 'register']) !!}
 
                         <div class="form-group row">
-                            {!! Form::label('name', @trans('Name'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('name', trans('Name'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
 
                             <div class="col-md-6">
                                 {{ Form::text('name', old('name'), ['id' => 'name', 'class' => 'form-control @error("name") is-invalid @enderror', 'required' => 'required', 'autocomplete' => 'name', 'autofocus' => 'autofocus'])}}
@@ -52,10 +52,9 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 {{ Form::submit(trans('Register'), ['class' => 'btn btn-primary']) }}
-
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
