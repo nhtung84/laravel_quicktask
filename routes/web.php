@@ -13,9 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Auth::routes();
-Route::get('/tasks', function () {
-    return view('tasks.index');
-});
+
+Route::resource('tasks', 'TaskController')->only(['index', 'store', 'destroy']);
