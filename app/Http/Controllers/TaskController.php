@@ -7,7 +7,6 @@ use App\Http\Requests\StoreTask;
 use App\Task;
 use App\Repositories\TaskRepository;
 
-
 class TaskController extends Controller
 {
 
@@ -66,4 +65,5 @@ class TaskController extends Controller
 
         return redirect('/tasks')->withErrors([trans('Can\'t find task')]);
     }
+
 }

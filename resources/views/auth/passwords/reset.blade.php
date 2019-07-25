@@ -5,16 +5,15 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">@lang('Reset Password')</div>
+                <div class="card-header">@lang('passwords.Reset Password')</div>
 
                 <div class="card-body">
                     {!! Form::open(['method'=> 'POST', 'routes' => 'password.update']) !!}
 
                         {{ Form::hidden('token', $token) }}
-                        <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group row">
-                            {!! Form::email('email', trans('E-Mail Address'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                            {!! Form::email('email', trans('passwords.E-Mail Address'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {{ Form::email('email', old('email'), ['id' => 'email', 'class' => 'form-control @error("email") is-invalid @enderror', 'required' => 'required', 'autocomplete' => 'email', 'autofocus' => 'autofocus', 'required' => 'required']) }}
 
@@ -24,7 +23,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('password', trans('Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('password', trans('passwords.Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {{ Form::password('password', ['id' => 'password', 'class' => 'form-control @error("password") is-invalid @enderror', 'required' => 'required', 'autocomplete' => 'new-password']) }}
 
@@ -34,7 +33,7 @@
                         </div>
 
                         <div class="form-group row">
-                            {!! Form::label('password-confirm', trans('Confirm Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                            {!! Form::label('password-confirm', trans('passwords.Confirm Password'), ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                             <div class="col-md-6">
                                 {{ Form::password('password_confirmation', ['id' => 'password-confirm', 'class' => 'form-control', 'required' => 'required', 'autocomplete' => 'new-password']) }}
 
