@@ -25,10 +25,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ route('login') }}">@lang('Login')</a></li>
-                        <li><a href="{{ route('register') }}">@lang('Register')</a></li>
+                        <li><a href="{{ route('login') }}">@lang('auth.Login')</a></li>
+                        <li><a href="{{ route('register') }}">@lang('auth.Register')</a></li>
                     @else
-                        <li><a href="{{ route('tasks.index') }}">@lang('Tasks')</a></li>
+                        <li><a href="{{ route('tasks.index') }}">@lang('task.Task')</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
@@ -36,12 +36,11 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <a href="" id="logout">
                                         <i class="fas fa-sign-out-alt fa-2x" aria-hidden="true"></i>
-                                        <span>@lang('Logout')</span>
+                                        <span>@lang('auth.Logout')</span>
                                     </a>
-                                    {!! Form::open(['method' => 'POST', 'route' => 'logout', 'class' => 'form-horizontal', 'id' => 'logout-form']) !!}
-                                    {!! Form::close() !!}
+
                                 </li>
                             </ul>
                         </li>
